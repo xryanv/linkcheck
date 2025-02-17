@@ -1,0 +1,14 @@
+ {
+    "manifest_version": 3,
+    "name": "Link Ownership Checker",
+    "version": "1.0",
+    "description": "Provides information about link ownership on hover.",
+    "permissions": ["activeTab"],
+    "host_permissions": ["https://ip-api.com/*"],
+    "content_scripts": [
+        {
+            "matches": ["<all_urls>"],
+            "js": ["content.js"]
+        }
+    ]
+}
