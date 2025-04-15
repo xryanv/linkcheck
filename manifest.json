@@ -1,14 +1,31 @@
- {
-    "manifest_version": 3,
-    "name": "Link Ownership Checker",
-    "version": "1.0",
-    "description": "Provides information about link ownership on hover.",
-    "permissions": ["activeTab"],
-    "host_permissions": ["https://ip-api.com/*"],
-    "content_scripts": [
-        {
-            "matches": ["<all_urls>"],
-            "js": ["content.js"]
-        }
-    ]
+{
+  "manifest_version": 2,
+  "name": "Fast Link Safety Checker",
+  "version": "1.2",
+  "description": "Instantly checks links for security threats with optimized speed.",
+  "permissions": [
+    "activeTab", 
+    "storage",
+    "webRequest",
+    "https://safebrowsing.googleapis.com/*",
+    "https://urlscan.io/*"
+  ],
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ],
+  "icons": {
+    "48": "icon48.png",
+    "128": "icon128.png"
+  },
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "fastlinksafety@example.com"
+    }
+  }
 }
